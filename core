@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $1 = '-stat' ]; then
+	python3 src/statistic.py "${@:2}"
+else
+	python3 src/CoRe.py $@
+fi

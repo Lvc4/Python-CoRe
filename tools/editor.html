@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>CoRe Editor</title>
+
+<style>
+	table {background: khaki;}
+	table, th, td {border: 1px solid black;border-collapse: collapse;}
+	td, .X, .O { width: 64px; height: 64px; }
+	.X {
+		background: linear-gradient(to bottom right, grey, white);
+		border-radius: 50%; }
+	.O {
+		background: linear-gradient(to bottom right, black, grey);
+		border-radius: 50%; }
+</style>
+
+<table id='board'>
+</table>
+
+<script>
+	window.onload = function() {
+		var board = document.getElementById('board');
+		for(var i = 0; i < 8; i++) {
+			var line = document.createElement('tr');
+			board.appendChild(line);
+			for(var j = 0; j < 8; j++) {
+				var item = document.createElement('td');
+				item.onmousedown = function(e) {
+					if (e.shiftKey) this.setAttribute('class','');
+					else if(e.button == 2 || e.which == 3) this.setAttribute('class', 'O');
+					else this.setAttribute('class', 'X');
+				};
+				item.oncontextmenu = function(e){e.preventDefault();};
+				line.appendChild(item);
+			}
+		}
+	};
+</script>
