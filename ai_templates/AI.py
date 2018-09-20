@@ -2,6 +2,16 @@
 
 import random
 
+#matrix ändern   matrix[x][y]=7
+global matrix = [[0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0]]
+
 def randomZug( board, symbol):
 	print("randomZug")
 	while 1:
@@ -11,10 +21,10 @@ def randomZug( board, symbol):
 		
 def catchCorners( board, symbol):
 	print("catchCorners")
-	if getboard( board, 0, 0) != '#' and getboard( board, 0, 0) != symbol and board[1][1] == '#': return ( 1, 1)
-	if getboard( board, 0, 7) != '#' and getboard( board, 0, 7) != symbol and board[1][6] == '#': return ( 1, 6)
-	if getboard( board, 7, 0) != '#' and getboard( board, 7, 0) != symbol and board[6][1] == '#': return ( 6, 1)
-	if getboard( board, 7, 7) != '#' and getboard( board, 7, 7) != symbol and board[6][6] == '#': return ( 6, 6)
+	if getboard( board, 0, 0) != '#' and getboard( board, 1, 1) != symbol and board[1][1] == '#': return ( 1, 1)
+	if getboard( board, 0, 7) != '#' and getboard( board, 6, 1) != symbol and board[6][1] == '#': return ( 1, 6)
+	if getboard( board, 7, 0) != '#' and getboard( board, 1, 6) != symbol and board[6][1] == '#': return ( 6, 1)
+	if getboard( board, 7, 7) != '#' and getboard( board, 6, 6) != symbol and board[6][1] == '#': return ( 6, 6)
 	return( -1, -1)
 
 def catchNext(board,symbol):
@@ -45,6 +55,7 @@ def catchBoarder( board, symbol):
 	
 
 def turn(board, symbol):
+        
 	# first try to catch corners
 	x,y=catchCorners( board, symbol)
 	print(x,y)
