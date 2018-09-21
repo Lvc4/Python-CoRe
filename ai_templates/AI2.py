@@ -45,10 +45,10 @@ def strategy( board, symbol):
 	for i in range(6):
 		matrix[i+1][0]+=1
 		
-	if getboard( board, 0, 0) != '#' and getboard( board, 1, 1) != symbol and board[1][1] == '#': matrix[1][2]+=1
-	if getboard( board, 0, 7) != '#' and getboard( board, 6, 1) != symbol and board[6][1] == '#': matrix[1][6]+=1
-	if getboard( board, 7, 0) != '#' and getboard( board, 1, 6) != symbol and board[6][1] == '#': matrix[6][1]+=1
-	if getboard( board, 7, 7) != '#' and getboard( board, 6, 6) != symbol and board[6][1] == '#': matrix[6][6]+=1
+	if getboard( board, 0, 0) != '#' and getboard( board, 1, 1) != symbol and board[1][1] == '#': matrix[1][2]+=2
+	if getboard( board, 0, 7) != '#' and getboard( board, 6, 1) != symbol and board[6][1] == '#': matrix[1][6]+=2
+	if getboard( board, 7, 0) != '#' and getboard( board, 1, 6) != symbol and board[6][1] == '#': matrix[6][1]+=2
+	if getboard( board, 7, 7) != '#' and getboard( board, 6, 6) != symbol and board[6][1] == '#': matrix[6][6]+=2
 	
 	
 
