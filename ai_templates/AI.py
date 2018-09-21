@@ -1,4 +1,4 @@
-# CoRe Turn
+﻿# CoRe Turn
 
 import random
 
@@ -10,7 +10,7 @@ global matrix = [[0, 0, 0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0 0, 0, 0, 0, 0, 0, 0]]
+                 [0, 0, 0, 0, 0, 0, 0, 0]]
 
 def randomZug( board, symbol):
 	print("randomZug")
