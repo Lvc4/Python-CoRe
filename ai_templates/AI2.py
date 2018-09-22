@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿# CoRe Turn
+=======
+# CoRe Turn
+>>>>>>> 62787c33c64aaa6339b74521946805be73d23f35
 
 import random
 
@@ -22,6 +26,7 @@ def turn(board, symbol):
 	bewerten( board, symbol)
 	strategy( board, symbol)
 	#choose turn
+<<<<<<< HEAD
 
 def bewerten( board, symbol):
 	print("bewerten")
@@ -73,3 +78,5 @@ def strategy( board, symbol):
 	if getboard( board, 0, 7) != '#' and getboard( board, 6, 1) != symbol and board[6][1] == '#': matrix[1][6]+=2
 	if getboard( board, 7, 0) != '#' and getboard( board, 1, 6) != symbol and board[6][1] == '#': matrix[6][1]+=2
 	if getboard( board, 7, 7) != '#' and getboard( board, 6, 6) != symbol and board[6][1] == '#': matrix[6][6]+=2
+=======
+>>>>>>> 62787c33c64aaa6339b74521946805be73d23f35
