@@ -4,21 +4,21 @@ import random
 
 #( x, y)
 #matrix ändern   matrix[x][y]=7
-global matrix = [[0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0 ,0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0]]
+global matrix =[[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0 ,0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0]]
 global oben = false
 global rechts = false
 global unten = false
 global links = false
 
 def turn(board, symbol):
-    #fill matrix
+	#fill matrix
 	bewerten( board, symbol)
 	strategy( board, symbol)
 	#choose turn
@@ -33,29 +33,29 @@ def bewerten( board, symbol):
 				for i in range(y):
 					if getboard( board, x, i) == symbol:
 						oben = True
-                    			if oben = True and getboard( board, x, i) != '#' and getboard( board, x, i) != symbol:
-                        			punkte += 1
+					if oben = True and getboard( board, x, i) != '#' and getboard( board, x, i) != symbol:
+						punkte += 1
 
 				#nach rechts
 				for i in range(7-x):
 					if getboard( board, 7-x, y) == symbol:
 						rechts = True
-                   			 if rechts = True and getboard( board, 7-x, y) != '#' and getboard( board, 7-x, y) != symbol:
-                     				   punkte += 1
+					if rechts = True and getboard( board, 7-x, y) != '#' and getboard( board, 7-x, y) != symbol:
+						punkte += 1
 
 				#nach unten
 				for i in range(7-y):
 					if getboard( board, x, 7-y) == symbol:
 						unten = True
-                   			 if unten = True and getboard( board, x, 7-y) != '#' and getboard( board, x, 7-y) != symbol:
-                      				punkte += 1
+					if unten = True and getboard( board, x, 7-y) != '#' and getboard( board, x, 7-y) != symbol:
+						punkte += 1
 
 				#nach links
 				for i in range(x):
 					if getboard( board, i, y) == symbol:
 						links = True
 					if links = True and getboard( board, i, y) != '#' and getboard( board, i, y) != symbol:
-                        			punkte += 1
+						punkte += 1
 				matrix[x][y] = punkte
 
 def strategy( board, symbol):
