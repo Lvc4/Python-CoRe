@@ -39,12 +39,6 @@ since they are surrounded horizontally (no need to be directly adjacent).
 % git clone https://github.com/lucagrosshennig/Python-CoRe
 ```
 
-### Download via SGW
-
-```
-% sgw download lucagrosshennig CoRe
-```
-
 ## Usage
 
 ```
@@ -53,7 +47,6 @@ since they are surrounded horizontally (no need to be directly adjacent).
 
 # Windows
 % python -3 src/CoRe.py ai_1 ai_2
-% or start the auto.bat and type the name of the AI not the path
 
 % python src/statistic.py ai_1 ai_2 amount_of_games_to_calculate -log
     # -log is optional

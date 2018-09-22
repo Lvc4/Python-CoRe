@@ -1,5 +1,3 @@
-
-# CoRe Turn
 def turn(board, symbol):
 	for x in range(8):
 		for y in range(8):

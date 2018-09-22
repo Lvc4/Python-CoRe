@@ -1,16 +1,4 @@
-﻿# CoRe Turn
-
 import random
-
-#matrix ändern   matrix[x][y]=7
-global matrix = [[0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0 ,0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0]]
 
 def randomZug( board, symbol):
 	print("randomZug")
@@ -18,7 +6,7 @@ def randomZug( board, symbol):
 		x = random.choice(range(8))
 		y = random.choice(range(8))
 		if getboard(board, x, y) == '#': return ( x, y)
-		
+
 def catchCorners( board, symbol):
 	print("catchCorners")
 	if getboard( board, 0, 0) != '#' and getboard( board, 1, 1) != symbol and board[1][1] == '#': return ( 1, 1)
@@ -36,8 +24,8 @@ def catchNext(board,symbol):
 			if getboard( board, x, y-1) == '#': return ( x, y-1)
 			if getboard( board, x-1, y) == '#': return ( x-1, y)
 	return( -1,-1)
-	
-def catchMost( board, symbol):	
+
+def catchMost( board, symbol):
 	print("catchMost")
 	return(0,0)
 
@@ -52,10 +40,10 @@ def catchBoarder( board, symbol):
 	for i in range(6):
 		if getboard(board, i+1, 0) == '#': return ( i+1, 0)
 	return( -1, -1)
-	
+
 
 def turn(board, symbol):
-        
+
 	# first try to catch corners
 	x,y=catchCorners( board, symbol)
 	print(x,y)
@@ -66,16 +54,14 @@ def turn(board, symbol):
 	print(x,y)
 	print(" ")
 	if x != -1:return( x, y)
-	
+
 	# chose random strategy
 	randomStategy = random.choice(range(2))
-	if randomStategy == 0: 
+	if randomStategy == 0:
 		return(randomZug( board, symbol))
 		print(x,y)
 		print(" ")
-	elif randomStategy == 1: 
+	elif randomStategy == 1:
 		return(catchNext( board, symbol))
 		print(x,y)
 		print(" ")
-	elif randomStategy == 2: 
-		return(catchMost( board, symbol))
